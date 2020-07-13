@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap');
+
+.container {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.main-headline__first {
+    font-size: 1.5rem;
+}
+
+.sign__word-standard {  
+    background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 0.2em;
+    background-position: 0 88%;
+    transition: background-size 0.1s ease-in;
+}
+
+.sign__word-standard:hover {
+    background-size: 100% 88%;
+}
+
+.main-headline__second {
+    font-size: 1.2rem;
+}
+
+#i {
+    color: #00aeef;
+}
+
+.main-description {
+    font-size: 1.2rem;
+}
