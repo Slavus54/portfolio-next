@@ -5,11 +5,10 @@ import Modal from 'react-awesome-modal';
 import io from 'socket.io-client';
 import axios from 'axios';
 import gql from 'graphql-tag';
-import { ApolloLink, onError } from "apollo-link-error";
 import { useQuery, useMutation } from '@apollo/react-hooks';
 import usersGQL from '../gql';
 
-const Contacts: React.FC<{props: any}> = (props) => {
+const Contacts: React.FC = () => {
     const users = usersGQL;
     const socket = io('http://localhost:4000');
     const [open, setOpen] = useState<boolean>(false);
@@ -23,10 +22,7 @@ const Contacts: React.FC<{props: any}> = (props) => {
             }
         }
     `;
-    const errorLink = onError(({ graphQLErrors }) => {
-        if (graphQLErrors) graphQLErrors.map(({ message }) => console.log(message))
-      })
-    const { loading, data } = useQuery(users);
+    const { data } = useQuery(users);
     const [AddUser, {error} ] = useMutation(add_user);
     if (error) {
         console.log(error)
